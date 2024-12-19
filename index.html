@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Wash - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Reset dan Pengaturan Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            
+        }
+
+        /* Latar Belakang */
+        body {
+            height: 100vh;
+           
+            
+            color: #f8f5f5;
+            display: flex;
+       
+            
+            
+        }
+        .background {
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/data/londrymerah.JPG');
+            background-size:cover;
+            background-position: center;
+            filter: brightness(50%);
+            z-index: -1;
+            margin-top:69px;
+    
+    
+
+    
+
+        }
+
+         /* Sidebar */
+         #sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 60%;
+            max-width: 250px;
+            height: 100%;
+            background-color: #f9f9f9;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            z-index: 40;
+        }
+
+        #sidebar.active {
+            transform: translateX(0);
+        }
+
+        #sidebar ul li a {
+            color: #350606;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        #sidebar ul li a:hover {
+            background-color: #ff0000;
+            color: rgb(247, 241, 241);
+        }
+
+        /* Navbar */
+        nav {
+            background-color: rgb(255, 0, 0);
+            width: 100%;
+            padding: 14px;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+         
+            backdrop-filter: blur(10px);
+
+        }
+      
+        nav :hover {
+            color: #ff0000;
+            
+        }
+        /* Efek Hover Keren */
+        nav ::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: #fcfffb;
+            bottom: -5px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        nav :hover::before {
+            transform: scaleX(1);
+            transform-origin: center;
+        }
+        nav a:hover {
+            color: #00ffe5;
+        }
+        /* Konten Utama */
+        .main-content {
+            text-align:center;
+            
+            margin-top: 5px;
+            margin-left: 100px;
+            position:static;
+            max-width: 800%;
+            margin: 200px auto;
+           
+            color: rgb(248, 248, 248);
+            
+        }
+        h1{
+            color:rgb(255, 255, 255);
+            font-size:300%;
+            text-align: center;
+            margin: 0px;
+        }
+        h2{
+            font-size:850%;
+            text-align: center;
+            color:#ff0000
+        
+        }
+        p{
+            color:#ffffff;
+            text-align:center;
+            text-transform: inherit;
+            max-width: 800%;
+            display: grid;
+            justify-items: center;
+            
+        }
+        
+       
+        
+        .text {
+                overflow: hidden;
+                font-size: 100%;
+                font-weight: 700;
+                border-right: 0.15em solid red;
+                white-space: nowrap;
+                width: 0; /* Mulai dari 0 */
+                animation: typing 6s steps(50) 1s infinite, blink-caret 0.75s step-end infinite;
+            }
+    
+            @keyframes typing {
+                from {
+                    width: 0;
+                }
+                to {
+                    width: 100%;
+                }
+            }
+    
+            @keyframes blink-caret {
+                50% {
+                    border-color: transparent;
+                }
+            }
+        /* Footer */
+        footer {
+            width: 100%;
+            padding-top: 1 px;
+            background-color: rgb(255, 0, 0);
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            
+            
+        }
+        footer p{
+            text-align: center;
+            color: rgb(243, 234, 234);
+        }
+        .social-icons a {
+            color: #ffffff;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #ff0f0b;
+        }
+
+        /* Tombol dan Ikon */
+        .hamburger, .close-sidebar {
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        @keyframes fadeUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-up {
+            opacity: 1;
+            animation: fadeUp 1.5s ease forwards;
+            animation-delay: .5s;
+            animation-duration: 10s;
+            
+        }
+        
+        /* Media Queries untuk Mobile */
+@media (max-width: 768px) {
+   
+
+    .main-content {
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-top: 200px;
+    }
+
+    h1 {
+        font-size: 200%;
+    }
+
+    h2 {
+        font-size: 300%;
+    }
+
+   
+
+    
+}
+    </style>
+</head>
+
+    <!-- Sidebar -->
+    <div id="sidebar">
+        <div class="flex justify-between items-center p-4 bg-red-600 text-white">
+            <span class="text-xl font-bold">Menu</span>
+            <button id="close-sidebar" class="close-sidebar">&times;</button>
+        </div>
+        <ul class="flex flex-col p-4 space-y-4">
+            <li><a href="index.html" class="block">Home</a></li>
+            <li><a href="tentang.html" class="block">Tentang</a></li>
+            <li><a href="layanan.html" class="block">Layanan</a></li>
+            <li><a href="alamat.html" class="block">Lokasi</a></li>
+            <li><a href="kontak.html" class="block">Kontak</a></li>
+        </ul>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="flex items-center">
+            <button id="hamburger" class="hamburger md:hidden">&#9776;</button>
+            <a href="#" class="text-white text-2xl font-bold uppercase ml-2"><marquee>SMART WASH</marquee></a>
+        </div>
+        <div class="hidden md:flex md:items-center md:space-x-4">
+            <a href="index.html" class="text-black hover:text-white px-4 py-3">Home</a>
+            <a href="tentang.html" class="text-black hover:text-white px-3 py-2">Tentang</a>
+            <a href="Layanan.html" class="text-black hover:text-white px-3 py-2">Layanan</a>
+            <a href="alamat.html" class="text-black hover:text-white px-3 py-2">Lokasi</a>
+            <a href="kontak.html" class="text-black hover:text-white px-3 py-2">Kontak</a>
+        </div>
+    </nav>
+    <div class="background"></div>
+    <!-- Main Content -->
+    <div class="main-content">
+    
+    <div class="text"><span><h1>Selamat Datang Di<h1><h2>SMART WASH</h2></span></div>
+    
+        <p class="">Bukan sekadar laundry biasa, kami adalah mitra Anda dalam menghadirkan  </p>
+        <p>pakaian bersih, wangi, dan penuh cerita. Serahkan pada kami, biarkan setiap serat </p> 
+        <p>pakaian Anda kembali bersinar, karena di SMART WASH, kebersihan adalah gaya hidup!</p>   
+    </div>
+    
+
+    <footer class="fade-up ">
+        <div class="container mx-auto px-4 text-center">
+            
+            
+            <div class="flex justify-center space-x-6 mt-5">
+                <a href="tel:082347393691" class="hover:text-yellow-400" title="Hubungi Kami"><i class="fas fa-phone-alt text-lg"></i></a>
+                <a href="https://wa.me/082347393691" target="_blank" class="hover:text-green-400" title="Chat WhatsApp"><i class="fab fa-whatsapp text-lg"></i></a>
+                <a href="https://www.instagram.com/smartwash" target="_blank" class="hover:text-pink-400" title="Ikuti di Instagram"><i class="fab fa-instagram text-lg"></i></a>
+                <a href="https://www.facebook.com/smartwash" target="_blank" class="hover:text-blue-400" title="Ikuti di Facebook"><i class="fab fa-facebook text-lg"></i></a>
+            </div>
+            <p class="text-xs mt-1">&copy; 2024 SMART WASH. Semua Hak Dilindungi. | Alamat: Jln Syarif Al Qadri, Sulawesi Selatan</p>
+            <p class="text-xs italic py-2">"Mencuci dengan SMART WASH, 1 Hari Udah Jadi Loh"</p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript for Sidebar -->
+    <script>
+        const hamburger = document.getElementById("hamburger");
+        const sidebar = document.getElementById("sidebar");
+        const closeSidebar = document.getElementById("close-sidebar");
+
+        hamburger.addEventListener("click", () => {
+            sidebar.classList.add("active");
+        });
+
+        closeSidebar.addEventListener("click", (X) => {
+            sidebar.classList.remove("active");
+        });
+    </script>
+</body>
+</html>
