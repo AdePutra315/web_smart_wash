@@ -347,21 +347,21 @@
     
         // Definisi ikon khusus
         const mesjidIcon = L.icon({
-            iconUrl: "/data/mesjid.png",
+            iconUrl: "mesjid.png",
             iconSize: [32, 32],
             iconAnchor: [16, 32],
             popupAnchor: [0, -32],
         });
     
         const sekolahIcon = L.icon({
-            iconUrl: "/data/sekolah.png",
+            iconUrl: "sekolah.png",
             iconSize: [32, 32],
             iconAnchor: [15, 25],
             popupAnchor: [12, -32],
         });
 
         const umkmIcon = L.icon({
-            iconUrl: "/data/lokasi.png",
+            iconUrl: "lokasi.png",
             iconSize: [32, 32],
             iconAnchor: [15, 29],
            
@@ -405,7 +405,7 @@
             alamat: "VFH5+94G, Benteng Sel., Kec. Benteng, Kab. Kepulauan Selayar, Sulawesi Selatan",
             phone: "082347393691",
             coords: [-6.1214375, 120.4579375],
-            imageUrl: "./data/smartwash.jpg",
+            imageUrl: ".smartwash.jpg",
         };
     
         const umkmMarker = L.marker(umkmData.coords, { icon: umkmIcon }).addTo(umkmLayer);
@@ -430,10 +430,10 @@
     
         // Memuat layer lain jika diperlukan
         const geojsonFiles = [
-            { url: "/data/BentengUtara.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "blue", fillOpacity: 0.2 } },
-            { url: "/data/BentengPusat.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "red", fillOpacity: 0.2 } },
-            { url: "/data/BentengSelatan.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "yellow", fillOpacity: 0.2 } },
-            { url: "/data/jalanBentengAnjay.geojson", style: { color: "#333", weight: 3, opacity: 1 } },
+            { url: "BentengUtara.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "blue", fillOpacity: 0.2 } },
+            { url: "BentengPusat.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "red", fillOpacity: 0.2 } },
+            { url: "BentengSelatan.geojson", style: { color: "#f0f0f0", weight: 1.5, opacity: 0.8, fillColor: "yellow", fillOpacity: 0.2 } },
+            { url: "jalanBentengAnjay.geojson", style: { color: "#333", weight: 3, opacity: 1 } },
         ];
     
         geojsonFiles.forEach((file) => {
