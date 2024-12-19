@@ -392,8 +392,8 @@
         const umkmLayer = L.layerGroup().addTo(map);
     
         // Memuat GeoJSON untuk mesjid, sekolah, dan UMKM dengan ikon khusus
-        loadGeoJSONWithIcons("/data/mesjid.geojson", mesjidIcon, mesjidLayer);
-        loadGeoJSONWithIcons("/data/sekolah.geojson", sekolahIcon, sekolahLayer);
+        loadGeoJSONWithIcons("mesjid.geojson", mesjidIcon, mesjidLayer);
+        loadGeoJSONWithIcons("sekolah.geojson", sekolahIcon, sekolahLayer);
     
         // Informasi UMKM
         const umkmData = {
@@ -405,7 +405,7 @@
             alamat: "VFH5+94G, Benteng Sel., Kec. Benteng, Kab. Kepulauan Selayar, Sulawesi Selatan",
             phone: "082347393691",
             coords: [-6.1214375, 120.4579375],
-            imageUrl: ".smartwash.jpg",
+            imageUrl: "smartwash.jpg",
         };
     
         const umkmMarker = L.marker(umkmData.coords, { icon: umkmIcon }).addTo(umkmLayer);
